@@ -1,1 +1,0 @@
-Shell Redirection readme file
