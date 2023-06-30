@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #Print best school using only while loop
 
 counter=0
