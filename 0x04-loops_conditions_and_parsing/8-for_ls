@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script displays files
+
+
+for file in *; do
+  if [ -f "$file" ] && [ ! -h "$file" ] && [ ! "${file:0:1}" = "." ]; then
+    name=${file#*-}
+    echo "$name"
+  fi
+done
