@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#Writes a script displaying Best School 10times, but for the 9th iteration, displays Best School and then Hi on a new line.
+
+addr=1
+
+while [ $addr -le 10 ]; do
+  if [ $addr -eq 9 ]; then
+    echo "Best School"
+    echo "Hi"
+  else
+    echo "Best School"
+  fi
+
+  ((addr++))
+done
