@@ -1,0 +1,10 @@
+#!/bin/bash
+#Print best school using only until loop
+
+
+add=0
+
+until [ $add -ge 10 ]; do
+  echo "Best School"
+  ((add++))
+done
