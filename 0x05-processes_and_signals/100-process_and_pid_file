@@ -2,8 +2,6 @@
 # This script creates files
 
 
-#!/bin/bash
-
 pid_file="/var/run/myscript.pid"
 
 # Create the PID file containing the script's PID
