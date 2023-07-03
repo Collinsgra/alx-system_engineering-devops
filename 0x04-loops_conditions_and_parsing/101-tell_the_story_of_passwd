@@ -1,13 +1,19 @@
 #!/usr/bin/env bash
-# This script writes a story based on /etc/passwd.
+# The passwd script teller
 
 
-while IFS=':' read -r username _ uid _ home _; do
-  read -r -a user_info <<< $(grep "^$username:" /etc/passwd)
-  passcode=${user_info[1]}
-  info=${user_info[4]}
-
-  echo "The user $username is part of the gang with GROUP_ID $uid, lives in $home, and rides COMMAND/SHELL."
-  echo "USER ID's place is protected by the passcode $passcode. More info about the user here: $info"
-  echo
-done < /etc/passwd
+myfile="/etc/passwd"
+f1=""
+f2=""
+f3=""
+while IFS= read -r line
+do
+    f1="$(echo "$line" | cut -d":" -f1)"
+    f2="$(echo "$line" | cut -d":" -f4)"
+    f3="$(echo "$line" | cut -d":" -f6)"
+    f4="$(echo "$line" | cut -d":" -f7)"
+    f5="$(echo "$line" | cut -d":" -f3)"
+    f6="$(echo "$line" | cut -d":" -f2)"
+    f7="$(echo "$line" | cut -d":" -f5)"
+    echo "The user ${f1} is part of the ${f2} gang, lives in ${f3} and rides ${f4}. ${f5}'s place is protected by the passcode ${f6}, more info about the user here: ${f7}"
+done < "$myfile"
