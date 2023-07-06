@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Makess localhost listen on to 98
+
+sudo nc -k -l 98
