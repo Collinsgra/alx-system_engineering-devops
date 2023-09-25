@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""returns information about his/her to do list progress"""
+"""returns information about his/her
+to do list progress"""
 
 
 import requests
@@ -24,10 +25,14 @@ def get_employee_todo_progress(employee_id):
 
         # Calculate progress
         total_tasks = len(todos)
-        completed_tasks = sum(1 for todo in todos if todo['completed'])
+        completed_tasks = sum(1 
+                for todo in todos 
+                if todo['completed'])
 
         # Display the progress
-        print(f"Employee {employee_data['name']} is done with tasks ({completed_tasks}/{total_tasks}):")
+        print(f"Employee {employee_data['name']} 
+        is done with tasks 
+                ({completed_tasks}/{total_tasks}):")
         for todo in todos:
             if todo['completed']:
                 print(f"\t{todo['title']}")
