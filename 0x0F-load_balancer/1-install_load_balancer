@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# configure HAproxy
+# Make sure that HAProxy can be managed using int
+
+# Install the HAproxy on lb-01 server.
+sudo apt-get -y update
+apt-get -y install haproxy
+
+# edit config file
+server_config=\
+"
+frontend  collinskoch_frontend
+        bind *:80
+        mode http
+        default_backend collinskoch_backend
+backend collinskoch_backend
+        balance roundrobin
+        server 244043-web-01 100.25.13.237 check
+        server 244043-web-02 35.175.129.126 check
+"
+echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
+
+# enable haproxy
+
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+
+sudo service haproxy restart
