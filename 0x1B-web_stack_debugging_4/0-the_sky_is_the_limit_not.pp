@@ -1,4 +1,4 @@
-# Enhancing Nginx server capacity by optimizing server settings
+# Enhancing Nginx server capacity by optimizing the server settings
 
 # Adjust the ULIMIT value to improve Nginx performance
 exec { 'fix-for-nginx-ulimit':
